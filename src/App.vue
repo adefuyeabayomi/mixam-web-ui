@@ -266,6 +266,19 @@ export default {
   },
 
   created() {
+    // send ping request
+    let url = `${this.$store.state.apiServer}/`;
+      window.axios
+        .get(url)
+        .then((response) => {
+          console.log(
+            "Ping request successful ",
+            response.data
+          );
+        })
+        .catch((err) => {
+          console.error("Error : Server didn't respond to ping request as expected", err.message);
+        });
     // create a vue plugin to use the socket.
     window.appStore = this.$store;
   },
