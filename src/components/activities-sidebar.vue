@@ -60,7 +60,7 @@ export default {
     computed: {},
     methods: {
         fetchAdminMessages() {
-            let url = "http://localhost/fetch-admin-daily-message/";
+            let url = `${this.$store.state.apiServer}/fetch-admin-daily-message/`;
             window.axios
                 .get(url)
                 .then((response) => {

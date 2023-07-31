@@ -733,7 +733,7 @@ export default {
       let MID = this.MID;
       let DID = this.DID;
       //let url = "/fetcharticle/";
-      let url = "http://localhost/fetcharticle/";
+      let url = `${this.$store.state.apiServer}/fetcharticle/`;
       window.axios
         .get(url, {
           params: {
@@ -775,7 +775,7 @@ export default {
       let draftObjectInit = this.CreateArticleObjectInit();
       console.log("draftObjInit", draftObjectInit);
       //let url = "/edit-article/";
-      let url = "http://localhost/edit-article/";
+      let url = `${this.$store.state.apiServer}/edit-article/`;
       let formData = new FormData();
       formData.append("MID", MID);
       formData.append("DID", DID);
@@ -812,7 +812,7 @@ export default {
       sectionObj = JSON.stringify(sectionObj);
       console.log("new section object");
       //let url = "/edit-article/";
-      let url = "http://localhost/edit-article/";
+      let url = `${this.$store.state.apiServer}/edit-article/`;
       let formData = new FormData();
       formData.append("MID", MID);
       formData.append("DID", DID);
@@ -840,7 +840,7 @@ export default {
       console.log("data object", dataObj);
       dataObj = JSON.stringify(dataObj);
       //let url = "/edit-article/";
-      let url = "http://localhost/edit-article/";
+      let url = `${this.$store.state.apiServer}/edit-article/`;
       let formData = new FormData();
       formData.append("MID", MID);
       formData.append("DID", DID);
@@ -878,7 +878,7 @@ export default {
       });
       contentItemObj = JSON.stringify(contentItemObj);
       //let url = "/edit-article/";
-      let url = "http://localhost/edit-article/";
+      let url = `${this.$store.state.apiServer}/edit-article/`;
       let formData = new FormData();
       formData.append("MID", MID);
       formData.append("DID", DID);
@@ -913,7 +913,7 @@ export default {
       dataObj = JSON.stringify(dataObj);
       //let url = "/edit-article/";
       let formData = new FormData();
-      let url = "http://localhost/edit-article/";
+      let url = `${this.$store.state.apiServer}/edit-article/`;
       formData.append("MID", MID);
       formData.append("DID", DID);
       formData.append("data", dataObj);
@@ -941,7 +941,7 @@ export default {
     },
     __reqDeleteSection(id) {
       let formData = new FormData();
-      let url = "http://localhost/edit-article/";
+      let url = `${this.$store.state.apiServer}/edit-article/`;
       formData.append("MID", this.MID);
       formData.append("DID", this.DID);
       formData.append("data", JSON.stringify({ sectionID: id }));
@@ -964,7 +964,7 @@ export default {
       // after confirming that you want to delete a content item from a section,
       // make the request with this function.
       let formData = new FormData();
-      let url = "http://localhost/edit-article/";
+      let url = `${this.$store.state.apiServer}/edit-article/`;
       formData.append("MID", this.MID);
       formData.append("DID", this.DID);
       formData.append("aid", this.aid);
@@ -998,7 +998,7 @@ export default {
       formData.append("data", data);
       formData.append("userAgent", this.userAgent);
       //let url = "/edit-article/";
-      let url = "http://localhost/edit-article/";
+      let url = `${this.$store.state.apiServer}/edit-article/`;
       if (editType == "updateArticleTitle") {
         // nofile, to avoid complication append undefined.
         formData.append("attachedFile", file);
@@ -1048,7 +1048,7 @@ export default {
     },
     __reqUpdateHashTags() {
       let formData = new FormData();
-      let url = "http://localhost/edit-article/";
+      let url = `${this.$store.state.apiServer}/edit-article/`;
       formData.append("MID", this.MID);
       formData.append("DID", this.DID);
       formData.append("aid", this.aid);
@@ -1067,7 +1067,7 @@ export default {
         });
     },
     addDraft() {
-      let url = "http://localhost/edit-article/";
+      let url = `${this.$store.state.apiServer}/edit-article/`;
       let formData = new FormData();
       formData.append("MID", this.MID);
       formData.append("DID", this.DID);
@@ -1152,7 +1152,7 @@ export default {
       }, 200);
     },
     publishDraft: function (val) {
-      let url = "http://localhost/publish-draft/";
+      let url = `${this.$store.state.apiServer}/publish-draft/`;
       window.axios
         .get(url, {
           params: {

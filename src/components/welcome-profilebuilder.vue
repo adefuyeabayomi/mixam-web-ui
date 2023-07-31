@@ -947,7 +947,7 @@ export default {
                 return;
             }
             this.$vs.loading();
-            let url = "http://localhost/submitdatainit/";
+            let url = `${this.$store.state.apiServer}/submitdatainit/`;
             let MID = this.$store.state.userAccountInfo.__mid;
             let DID = JSON.parse(
                 window.localStorage.getItem("userlogindata")
@@ -1024,7 +1024,7 @@ export default {
                 window.localStorage.getItem("userlogindata")
             ).DID;
             console.log("action, MID and DID", MID, DID, action);
-            let url = "http://localhost/submitdatainit/";
+            let url = `${this.$store.state.apiServer}/submitdatainit/`;
             // let url = "/submitdatainit";
             console.log(url);
             let formElement = document.getElementById("profilephoto");
@@ -1126,7 +1126,7 @@ export default {
                 return;
             }
             this.$vs.loading();
-            let url = "http://localhost/submitdatainit/";
+            let url = `${this.$store.state.apiServer}/submitdatainit/`;
             window.axios
                 .post(url, {
                     params: {
@@ -1191,7 +1191,7 @@ export default {
                 window.localStorage.getItem("userlogindata")
             ).DID;
             console.log("action, MID and DID", MID, DID, action);
-            let url = "http://localhost/submitdatainit/";
+            let url = `${this.$store.state.apiServer}/submitdatainit/`;
             // let url = "/submitdatainit";
             if (this.activityPref.length == 0) {
                 this.$modal.show("dialog", {
@@ -1275,7 +1275,7 @@ export default {
                 window.localStorage.getItem("userlogindata")
             ).DID;
             console.log("action, MID and DID", MID, DID, action);
-            let url = "http://localhost/submitdatainit/";
+            let url = `${this.$store.state.apiServer}/submitdatainit/`;
             // let url = "/submitdatainit";
             if (this.interests.length == 0) {
                 this.$modal.show("dialog", {

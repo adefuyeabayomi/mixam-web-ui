@@ -858,7 +858,7 @@ export default {
     methods: {
         // course main
         fetchCourseData() {
-            let url = "http://localhost/fetchcourses/";
+            let url = `${this.$store.state.apiServer}/fetchcourses/`;
             window.axios
                 .get(url, {
                     params: {
@@ -873,7 +873,7 @@ export default {
                     });
                     this.alreadyLiked();
                     this.viewedCourse();
-                    let link = `https://mixam-business.onrender.com/gu/course/?cid=${
+                    let link = `${this.$store.state.apiServer}/gu/course/?cid=${
                         this.itemData.cid
                     }&guser=${true}&author=${this.itemData.author}`;
                     this.shareLink = link;
@@ -931,7 +931,7 @@ export default {
             }
             if (notAdded.length > 0) {
                 console.log("not added ", notAdded);
-                let url = "http://localhost/fetch-users-updated/";
+                let url = `${this.$store.state.apiServer}/fetch-users-updated/`;
                 window.axios
                     .get(url, {
                         params: {
@@ -1005,7 +1005,7 @@ export default {
         turnOffCommenting(action) {
             this.closeOptions();
             console.log("comment turn off operation");
-            let url = "http://localhost/toggle-content-commenting/";
+            let url = `${this.$store.state.apiServer}/toggle-content-commenting/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1042,7 +1042,7 @@ export default {
         unpublishCourse() {
             this.closeOptions();
             console.log("delete post operation");
-            let url = "http://localhost/delete-content/";
+            let url = `${this.$store.state.apiServer}/delete-content/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1081,7 +1081,7 @@ export default {
         removeFromFeed: function () {
             this.closeOptions();
             console.log("remove from feed operation");
-            let url = "http://localhost/mute-content/";
+            let url = `${this.$store.state.apiServer}/mute-content/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1139,7 +1139,7 @@ export default {
             if (this.viewed) return;
             if (!this.itemData.viewedBy) return;
             this.viewed = true;
-            let url = "http://localhost/update-item-view/";
+            let url = `${this.$store.state.apiServer}/update-item-view/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1195,7 +1195,7 @@ export default {
                 });
                 return;
             }
-            let url = "http://localhost/take-course/";
+            let url = `${this.$store.state.apiServer}/take-course/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1245,7 +1245,7 @@ export default {
                 });
                 return;
             }
-            let url = "http://localhost/savecourseforlater/";
+            let url = `${this.$store.state.apiServer}/savecourseforlater/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1308,7 +1308,7 @@ export default {
             this.liked = !this.liked;
         },
         like: function (value) {
-            let url = "http://localhost/like/";
+            let url = `${this.$store.state.apiServer}/like/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1343,7 +1343,7 @@ export default {
                 });
         },
         unlike: function (value) {
-            let url = "http://localhost/unlike/";
+            let url = `${this.$store.state.apiServer}/unlike/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1390,7 +1390,7 @@ export default {
                 return;
             }
             let review = this.review;
-            let url = "http://localhost/comment/";
+            let url = `${this.$store.state.apiServer}/comment/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1430,7 +1430,7 @@ export default {
         },
         deleteReview: function (reviewID) {
             console.log("delete review Clicked", reviewID);
-            let url = "http://localhost/deletecomment/";
+            let url = `${this.$store.state.apiServer}/deletecomment/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1460,7 +1460,7 @@ export default {
             // the request redirect was implemented in the method sendComment check for reference
             let reviewID = this.currentEditID;
             console.log("edit review clicked ", reviewID);
-            let url = "http://localhost/editcomment/";
+            let url = `${this.$store.state.apiServer}/editcomment/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1534,7 +1534,7 @@ export default {
             author,
             notificationID
         ) {
-            let url = "http://localhost/updatecommentlikes/";
+            let url = `${this.$store.state.apiServer}/updatecommentlikes/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1634,7 +1634,7 @@ export default {
                 this.editReply(reviewID, this.editReplyID, this.reply);
                 return;
             }
-            let url = "http://localhost/reply/";
+            let url = `${this.$store.state.apiServer}/reply/`;
             let cid = this.itemData.cid;
             console.log("req cid", cid, this.mentionInformation);
             window.axios
@@ -1727,7 +1727,7 @@ export default {
             notificationID,
             replyLikeID
         ) {
-            let url = "http://localhost/updatereplylikes/";
+            let url = `${this.$store.state.apiServer}/updatereplylikes/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1796,7 +1796,7 @@ export default {
                 "reply",
                 reply
             );
-            let url = "http://localhost/editreply/";
+            let url = `${this.$store.state.apiServer}/editreply/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1832,7 +1832,7 @@ export default {
         },
         deleteReply: function (reviewID, replyID) {
             console.log("edit reply", reviewID, replyID);
-            let url = "http://localhost/deletereply/";
+            let url = `${this.$store.state.apiServer}/deletereply/`;
             window.axios
                 .get(url, {
                     params: {
@@ -1948,7 +1948,7 @@ export default {
         },
         shareToMyProfile() {
             this.share("profile", "course");
-            let url = "http://localhost/share-to-profile/";
+            let url = `${this.$store.state.apiServer}/share-to-profile/`;
             console.log("sharing post to profile");
             window.axios
                 .get(url, {
@@ -1982,7 +1982,7 @@ export default {
                 });
         },
         share(to, contentType) {
-            let url = "http://localhost/share/";
+            let url = `${this.$store.state.apiServer}/share/`;
             let parsedLink = new window.URL(this.shareLink);
             window.axios
                 .get(url, {

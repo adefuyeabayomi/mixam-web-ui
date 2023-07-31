@@ -330,7 +330,7 @@ export default {
   },
   methods: {
     fetchDrafts: function () {
-      let url = "http://localhost/fetch-drafts/";
+      let url = `${this.$store.state.apiServer}/fetch-drafts/`;
       window.axios
         .get(url, {
           params: {

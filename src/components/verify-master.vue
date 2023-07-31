@@ -65,7 +65,7 @@ export default {
         },
         resendRequest() {
             this.$vs.loading();
-            let url = "http://localhost/resend-email/";
+            let url = `${this.$store.state.apiServer}/resend-email/`;
             window.axios
                 .get(url, {
                     params: {

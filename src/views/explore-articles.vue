@@ -55,7 +55,7 @@ export default {
     fetchArticles(event) {
       this.fetchingMore = true;
       let vuexFeedAction = this.$store.state.feedAction;
-      let url = "http://localhost/feed/";
+      let url = `${this.$store.state.apiServer}/feed/`;
       window.axios
         .get(url, {
           params: {

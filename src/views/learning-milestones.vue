@@ -36,7 +36,7 @@ export default {
   computed: {},
   methods: {
     fetchLearningMilestones: function () {
-      let url = "http://localhost/fetch-learning-milestones/";
+      let url = `${this.$store.state.apiServer}/fetch-learning-milestones/`;
       window.axios
         .get(url, {
           params: {

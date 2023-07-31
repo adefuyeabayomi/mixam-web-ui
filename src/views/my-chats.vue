@@ -236,7 +236,7 @@ export default {
     },
     fetchChatHistory() {
       this.$vs.loading();
-      let url = "http://localhost/fetch-my-chats/";
+      let url = `${this.$store.state.apiServer}/fetch-my-chats/`;
       window.axios
         .get(url, {
           params: {

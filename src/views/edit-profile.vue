@@ -161,7 +161,7 @@ export default {
       this.interests.splice(this.interests.indexOf(item), 1);
     },
     sendEditRequest: async function () {
-      let url = "http://localhost/edit-profile/";
+      let url = `${this.$store.state.apiServer}/edit-profile/`;
       let formData = new FormData();
       formData.append("username", this.username ? this.username : "");
       formData.append("website", this.website ? this.website : "");
@@ -201,7 +201,7 @@ export default {
         });
     },
     fetchAccountData() {
-      let url = "http://localhost/getaccountinfo/";
+      let url = `${this.$store.state.apiServer}/getaccountinfo/`;
       this.$vs.loading();
       window.axios
         .get(url, {

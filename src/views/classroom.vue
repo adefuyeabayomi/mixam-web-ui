@@ -275,7 +275,7 @@ export default {
     // course main
     fetchCourseData() {
       this.$vs.loading();
-      let url = "http://localhost/fetchcourses/";
+      let url = `${this.$store.state.apiServer}/fetchcourses/`;
       window.axios
         .get(url, {
           params: {
@@ -324,7 +324,7 @@ export default {
       console.log("QAObject", QAObj);
     },
     fetchClassroomState() {
-      let url = "http://localhost/fetchClassRoomState/";
+      let url = `${this.$store.state.apiServer}/fetchClassRoomState/`;
       window.axios
         .get(url, {
           params: {
@@ -345,7 +345,7 @@ export default {
       this.$modal.hide("classroom-welcome");
     },
     updateFirstEntry() {
-      let url = "http://localhost/update-classroom-firstentry/";
+      let url = `${this.$store.state.apiServer}/update-classroom-firstentry/`;
       window.axios
         .get(url, {
           params: {
@@ -369,7 +369,7 @@ export default {
       this.$modal.show("section-quiz");
     },
     submitSectionQuiz() {
-      let url = "http://localhost/move-to-next-section/";
+      let url = `${this.$store.state.apiServer}/move-to-next-section/`;
       console.log("section Quiz Answers", this.sectionQuizAnswers);
       let undoneSections = [];
       let quizAnswerCount = 0;

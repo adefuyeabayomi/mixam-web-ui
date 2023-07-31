@@ -159,7 +159,7 @@ export default {
         });
                
       }
-      let url = "http://localhost/publishpost/";
+      let url = `${this.$store.state.apiServer}/publishpost/`;
       //formdata;
 
       formData.append(

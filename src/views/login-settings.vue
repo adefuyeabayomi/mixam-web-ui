@@ -164,7 +164,7 @@ export default {
       this.showPassword = !this.showPassword;
     },
     submitPasswordUpdate() {
-      let url = "http://localhost/update-login-details/";
+      let url = `${this.$store.state.apiServer}/update-login-details/`;
       if (this.pChange !== this.pChangeConfirm) {
         this.$modal.show("dialog", {
           title:
@@ -241,7 +241,7 @@ export default {
         });
     },
     submitEmailUpdate() {
-      let url = "http://localhost/update-login-details/";
+      let url = `${this.$store.state.apiServer}/update-login-details/`;
       if (!validate(this.eChange)) {
         this.$modal.show("dialog", {
           title:
@@ -305,7 +305,7 @@ export default {
         });
     },
     submitLoginUpdate() {
-      let url = "http://localhost/update-login-details/";
+      let url = `${this.$store.state.apiServer}/update-login-details/`;
       if (this.cLoginMethod == "") {
         this.$modal.show("dialog", {
           title:

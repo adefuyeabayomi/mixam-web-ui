@@ -67,7 +67,7 @@ export default {
         },
         fetchCourseData() {
             this.$vs.loading();
-            let url = "http://localhost/fetchcourses/";
+            let url = `${this.$store.state.apiServer}/fetchcourses/`;
             window.axios
                 .get(url, {
                     params: {

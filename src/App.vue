@@ -76,7 +76,7 @@ export default {
       if (window.localStorage.getItem("userlogindata")) {
         let MID = JSON.parse(window.localStorage.getItem("userlogindata")).MID;
         let DID = JSON.parse(window.localStorage.getItem("userlogindata")).DID;
-        let socketUrl = `ws://${window.location.host}/realtime-data/?MID=${MID}&DID=${DID}`;
+        let socketUrl = `${this.$store.state.websocketServer}/realtime-data/?MID=${MID}&DID=${DID}`;
         let realtimeData;
         // user following observer - realtime is on this socket
 
@@ -117,7 +117,7 @@ export default {
       }
     },
     fetchChatHistory() {
-      let url = "http://${window.location.host}/fetch-my-chats/";
+      let url = `${this.$store.state.apiServer}/fetch-my-chats/`;
       window.axios
         .get(url, {
           params: {
@@ -150,7 +150,7 @@ export default {
       this.$store.commit("closeforgotpassword");
     },
     fetchNotifications: function () {
-      let url = "http://${window.location.host}/fetch-notifications/";
+      let url = `${this.$store.state.apiServer}/fetch-notifications/`;
       window.axios
         .get(url, {
           params: {
@@ -244,7 +244,7 @@ export default {
       console.log("followers_following", this.followers_following());
       if (this.followers_following().length > 0) {
         console.log("not added ", this.followers_following());
-        let url = "http://${window.location.host}/fetch-users-updated/";
+        let url = `/${this.$store.state.apiServer}/fetch-users-updated/`;
         window.axios
           .get(url, {
             params: {

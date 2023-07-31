@@ -31,7 +31,7 @@ export default {
   computed: {},
   methods: {
     fetchSavedCourses() {
-      let url = "http://localhost/fetch-saved-courses/";
+      let url = `${this.$store.state.apiServer}/fetch-saved-courses/`;
       window.axios
         .get(url, {
           params: {

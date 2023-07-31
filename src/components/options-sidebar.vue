@@ -547,7 +547,7 @@ export default {
             }
         },
         markAllAsRead() {
-            let url = "http://localhost/mark-all-notification-read/";
+            let url = `${this.$store.state.apiServer}/mark-all-notification-read/`;
             window.axios
                 .get(url, {
                     params: {

@@ -165,7 +165,7 @@ export default {
       console.log("image upload event detected", e);
     },
     fetchMessages() {
-      let url = "http://localhost/fetch-chat-details/";
+      let url = `${this.$store.state.apiServer}/fetch-chat-details/`;
       window.axios
         .get(url, {
           params: {
@@ -194,7 +194,7 @@ export default {
         });
     },
     openChat() {
-      let url = "http://localhost/open-chat/";
+      let url = `${this.$store.state.apiServer}/open-chat/`;
       window.axios
         .get(url, {
           params: {
@@ -218,7 +218,7 @@ export default {
       ) {
         console.log("No input or file");
       }
-      let url = "http://localhost/send-chat-message/";
+      let url = `${this.$store.state.apiServer}/send-chat-message/`;
       let formData = new FormData(
         document.getElementById("msg-file-container")
       );

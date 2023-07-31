@@ -415,7 +415,7 @@ export default {
                 deviceID = generateDeviceID();
             }
 
-            let url = "http://localhost/apiservice/auth/";
+            let url = `${this.$store.state.apiServer}/apiservice/auth/`;
             //let url = "apiservice/auth/";
             console.log(
                 email +
@@ -513,7 +513,7 @@ export default {
                             text:
                                 "Reason : " +
                                 response.data.errorMessage +
-                                ". Please follow the instructions given or send an email to mixambusiness@gmail.com to report the issue.",
+                                ". Please follow the instructions given or send an email to adefuyeabayomi1@gmail.com to report the issue.",
                             buttons: [
                                 {
                                     title: "OKAY",

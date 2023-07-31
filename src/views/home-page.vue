@@ -402,7 +402,7 @@ export default {
           color: "dark",
         });
       } else {
-        let url = "http://localhost/addsubscriber/";
+        let url = `${this.$store.state.apiServer}/addsubscriber/`;
         window.axios
           .get(url, {
             params: {

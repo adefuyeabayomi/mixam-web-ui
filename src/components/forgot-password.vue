@@ -172,7 +172,7 @@ export default {
             // check form validity
             if (this.forgotpasswordEmailValid) {
                 this.$vs.loading();
-                let url = "http://localhost/forgotpassword/";
+                let url = `${this.$store.state.apiServer}/forgotpassword/`;
                 axios
                     .get(url, {
                         params: {

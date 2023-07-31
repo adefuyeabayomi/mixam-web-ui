@@ -143,7 +143,7 @@ export default {
         });
         return;
       } else {
-        let url = "http://localhost/update-daily-admin-message/";
+        let url = `${this.$store.state.apiServer}/update-daily-admin-message/`;
         let formData = new FormData(document.getElementById("aam-msg"));
         formData.append("messageTitle", this.messageTitle);
         formData.append("messageContent", this.messageContent);

@@ -83,7 +83,7 @@ export default {
         console.log("MID , DID", MID, DID);
         //send request to fetch data here.
         // let url = "";
-        let url = "http://localhost/getaccountinfo/";
+        let url = `${this.$store.state.apiServer}/getaccountinfo/`;
         this.$vs.loading();
         window.axios
           .get(url, {

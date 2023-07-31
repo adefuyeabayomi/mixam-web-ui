@@ -345,7 +345,7 @@ export default {
                 ).DID;
             }
             console.log("data", data);
-            let url = "http://localhost/apiservice/auth/";
+            let url = `${this.$store.state.apiServer}/apiservice/auth/`;
             //let url = "/apiservice/auth/";
             this.$vs.loading({
                 text: "Logging You in..., Please wait",
@@ -501,7 +501,7 @@ export default {
                 });
         },
         resendVerifyEmail: function () {
-            let url = "http://localhost/resend-email/";
+            let url = `${this.$store.state.apiServer}/resend-email/`;
             window.axios
                 .get(url, {
                     params: {

@@ -72,7 +72,7 @@ export default {
     },
     methods: {
         fetchDraftInfoC() {
-            let url = "http://localhost/fetchcourses/";
+            let url = `${this.$store.state.apiServer}/fetchcourses/`;
             window.axios
                 .get(url, {
                     params: {
@@ -93,7 +93,7 @@ export default {
                 });
         },
         fetchDraftInfoA: function () {
-            let url = "http://localhost/fetcharticle/";
+            let url = `${this.$store.state.apiServer}/fetcharticle/`;
             window.axios
                 .get(url, {
                     params: {
@@ -114,7 +114,7 @@ export default {
                 });
         },
         publishDraft: function (val) {
-            let url = "http://localhost/publish-draft/";
+            let url = `${this.$store.state.apiServer}/publish-draft/`;
             window.axios
                 .get(url, {
                     params: {

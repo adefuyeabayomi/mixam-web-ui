@@ -226,7 +226,7 @@
               target="_blank"
               :href="
                 'https://twitter.com/intent/tweet?text=' +
-                'Hi there, Saw this post on mixam-business.onrender.com and I wanted to share it. Check it out here&url=' +
+                'Hi there, Saw this post on mixam business website and I wanted to share it. Check it out here&url=' +
                 shareLink +
                 '&related=@mixam_business'
               "
@@ -305,7 +305,7 @@
               target="_blank"
               :href="
                 'https://twitter.com/intent/tweet?text=' +
-                'Hi there, Saw this post on mixam-business.onrender.com and I wanted to share it. Check it out here&url=' +
+                'Hi there, Saw this post on mixam business website and I wanted to share it. Check it out here&url=' +
                 shareLink +
                 '&related=@mixam_business'
               "
@@ -384,7 +384,7 @@
               target="_blank"
               :href="
                 'https://twitter.com/intent/tweet?text=' +
-                'Hi there, Saw this post on mixam-business.onrender.com and I wanted to share it. Check it out here&url=' +
+                'Hi there, Saw this post on mixam business website and I wanted to share it. Check it out here&url=' +
                 shareLink +
                 '&related=@mixam_business'
               "
@@ -587,7 +587,7 @@ export default {
   },
   methods: {
     search() {
-      let url = "http://localhost/search/";
+      let url = `${this.$store.state.apiServer}/search/`;
       //let url = "/search/"
       window.axios
         .get(url, {
@@ -633,7 +633,7 @@ export default {
       if (to == "profile") {
         this.shareToProfile();
       }
-      let url = "http://localhost/share/";
+      let url = `${this.$store.state.apiServer}/share/`;
       let parsedLink = new window.URL(this.shareLink);
       window.axios
         .get(url, {
@@ -674,7 +674,7 @@ export default {
         });
     },
     shareToProfile() {
-      let url = "http://localhost/share-to-profile/";
+      let url = `${this.$store.state.apiServer}/share-to-profile/`;
       console.log("sharing post to profile");
       let parsedLink = new window.URL(this.shareLink);
       window.axios
@@ -703,7 +703,7 @@ export default {
     },
     sendReportRequest() {
       this.$vs.loading();
-      let url = "http://localhost/report/";
+      let url = `${this.$store.state.apiServer}/report/`;
       let DID = JSON.parse(window.localStorage.getItem("userlogindata")).DID;
       let MID = JSON.parse(window.localStorage.getItem("userlogindata")).MID;
       let userAgent = this.$store.state.__userAgent;

@@ -1057,7 +1057,7 @@ export default {
       let MID = this.MID;
       let DID = this.DID;
       //let url = "/edit-course/";
-      let url = "http://localhost/fetchcourses/";
+      let url = `${this.$store.state.apiServer}/fetchcourses/`;
       window.axios
         .get(url, {
           params: {
@@ -1091,7 +1091,7 @@ export default {
       draftObjectInit = JSON.stringify(draftObjectInit);
       console.log("courseDraftObject", draftObjectInit);
       //let url = "/edit-course/";
-      let url = "http://localhost/edit-course/";
+      let url = `${this.$store.state.apiServer}/edit-course/`;
       let formData = new FormData();
       formData.append("MID", MID);
       formData.append("DID", DID);
@@ -1114,7 +1114,7 @@ export default {
       let MID = this.MID;
       let DID = this.DID;
       //let url = "/edit-course/";
-      let url = "http://localhost/edit-course/";
+      let url = `${this.$store.state.apiServer}/edit-course/`;
       let formData = new FormData();
       formData.append("MID", MID);
       formData.append("DID", DID);
@@ -1138,7 +1138,7 @@ export default {
       let DID = this.DID;
       sectionObj = JSON.stringify(sectionObj);
       //let url = "/edit-course/";
-      let url = "http://localhost/edit-course/";
+      let url = `${this.$store.state.apiServer}/edit-course/`;
       let formData = new FormData();
       formData.append("MID", MID);
       formData.append("DID", DID);
@@ -1165,7 +1165,7 @@ export default {
       });
       console.log("data object", contentObj);
       //let url = "/edit-course/";
-      let url = "http://localhost/edit-course/";
+      let url = `${this.$store.state.apiServer}/edit-course/`;
       let formData = new FormData();
       formData.append("MID", MID);
       formData.append("DID", DID);
@@ -1190,7 +1190,7 @@ export default {
       console.log(dataObj);
 
       //let url = "/edit-course/";
-      let url = "http://localhost/edit-course/";
+      let url = `${this.$store.state.apiServer}/edit-course/`;
       let formData = new FormData();
       formData.append("MID", MID);
       formData.append("DID", DID);
@@ -1211,7 +1211,7 @@ export default {
     __reqDeleteQuiz(sectionID, quizID) {
       // after confirming that you want to delete a content item from a section,
       // make the request with this function.
-      let url = "http://localhost/edit-course/";
+      let url = `${this.$store.state.apiServer}/edit-course/`;
       let formData = new FormData();
       formData.append("MID", this.MID);
       formData.append("DID", this.DID);
@@ -1231,7 +1231,7 @@ export default {
     },
     __reqDeleteSection(id) {
       let formData = new FormData();
-      let url = "http://localhost/edit-course/";
+      let url = `${this.$store.state.apiServer}/edit-course/`;
       formData.append("MID", this.MID);
       formData.append("DID", this.DID);
       formData.append("data", JSON.stringify({ sectionID: id }));
@@ -1263,7 +1263,7 @@ export default {
       // after confirming that you want to delete a content item from a section,
       // make the request with this function.
       let formData = new FormData();
-      let url = "http://localhost/edit-course/";
+      let url = `${this.$store.state.apiServer}/edit-course/`;
       formData.append("MID", this.MID);
       formData.append("DID", this.DID);
       formData.append("cid", this.cid);
@@ -1287,7 +1287,7 @@ export default {
       let DID = this.DID;
       let data = JSON.stringify({ value });
       //let url = "/edit-course/";
-      let url = "http://localhost/edit-course/";
+      let url = `${this.$store.state.apiServer}/edit-course/`;
       let file = undefined;
       let formData = new FormData();
       formData.append("MID", MID);
@@ -1346,7 +1346,7 @@ export default {
       };
       console.log("data object", dataObj);
       dataObj = JSON.stringify(dataObj);
-      let url = "http://localhost/edit-course/";
+      let url = `${this.$store.state.apiServer}/edit-course/`;
       let formData = new FormData();
       formData.append("MID", MID);
       formData.append("DID", DID);
@@ -1371,7 +1371,7 @@ export default {
       let contentType = dataObj.contentType;
       dataObj = JSON.stringify(dataObj);
       //let url = "/edit-course/";
-      let url = "http://localhost/edit-course/";
+      let url = `${this.$store.state.apiServer}/edit-course/`;
       let formData = new FormData();
       formData.append("MID", MID);
       formData.append("DID", DID);
@@ -1410,7 +1410,7 @@ export default {
       console.log(dataObj);
       dataObj = JSON.stringify(dataObj);
       //let url = "/edit-course/";
-      let url = "http://localhost/edit-course/";
+      let url = `${this.$store.state.apiServer}/edit-course/`;
       let formData = new FormData();
       formData.append("MID", MID);
       formData.append("DID", DID);
@@ -1430,7 +1430,7 @@ export default {
         });
     },
     addDraft() {
-      let url = "http://localhost/edit-course/";
+      let url = `${this.$store.state.apiServer}/edit-course/`;
       let formData = new FormData();
       formData.append("MID", this.MID);
       formData.append("DID", this.DID);
@@ -1575,7 +1575,7 @@ export default {
       }, 500);
     },
     publishDraft: function (val) {
-      let url = "http://localhost/publish-draft/";
+      let url = `${this.$store.state.apiServer}/publish-draft/`;
       window.axios
         .get(url, {
           params: {

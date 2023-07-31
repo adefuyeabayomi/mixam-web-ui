@@ -58,7 +58,7 @@ export default {
         this.feedbackType,
         this.feedbackMessage
       );
-      let url = "http://localhost/submit-feedback/";
+      let url = `${this.$store.state.apiServer}/submit-feedback/`;
       this.$vs.loading();
       window.axios
         .get(url, {

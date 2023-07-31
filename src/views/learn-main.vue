@@ -186,7 +186,7 @@ export default {
 
     sendReportRequest() {
       this.$vs.loading();
-      let url = "http://localhost/report/";
+      let url = `${this.$store.state.apiServer}/report/`;
       let DID = JSON.parse(window.localStorage.getItem("userlogindata")).DID;
       let MID = JSON.parse(window.localStorage.getItem("userlogindata")).MID;
       let userAgent = this.$store.state.__userAgent;

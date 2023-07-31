@@ -434,7 +434,7 @@ export default {
         },
         readNotification() {
             if (this.notificationRead) return;
-            let url = "http://localhost/read-notification/";
+            let url = `${this.$store.state.apiServer}/read-notification/`;
             window.axios
                 .get(url, {
                     params: {

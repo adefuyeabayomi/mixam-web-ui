@@ -34,7 +34,7 @@ export default {
   computed: {},
   methods: {
     fetchMyCourses() {
-      let url = "http://localhost/fetch-my-courses/";
+      let url = `${this.$store.state.apiServer}/fetch-my-courses/`;
       window.axios
         .get(url, {
           params: {

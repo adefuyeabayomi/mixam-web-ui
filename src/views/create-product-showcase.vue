@@ -215,7 +215,7 @@ export default {
         })
       );
       // let url = "/publishproductshowcase/"
-      let url = "http://localhost/publishproductshowcase/";
+      let url = `${this.$store.state.apiServer}/publishproductshowcase/`;
       window.axios
         .post(url, formData, {
           headers: {

@@ -143,7 +143,7 @@ export default {
   },
   methods: {
     fetchNotifications: function () {
-      let url = "http://localhost/fetch-notifications/";
+      let url = `${this.$store.state.apiServer}/fetch-notifications/`;
       window.axios
         .get(url, {
           params: {
@@ -169,7 +169,7 @@ export default {
         });
     },
     updateSeen: function () {
-      let url = "http://localhost/update-seen-notification/";
+      let url = `${this.$store.state.apiServer}/update-seen-notification/`;
       window.axios
         .get(url, {
           params: {
@@ -189,7 +189,7 @@ export default {
         });
     },
     markAllAsRead() {
-      let url = "http://localhost/mark-all-notification-read/";
+      let url = `${this.$store.state.apiServer}/mark-all-notification-read/`;
       window.axios
         .get(url, {
           params: {
@@ -214,7 +214,7 @@ export default {
     },
     clearNotifications() {
       console.log("clearing notifications");
-      let url = "http://localhost/clear-notifications/";
+      let url = `${this.$store.state.apiServer}/clear-notifications/`;
       window.axios
         .get(url, {
           params: {
