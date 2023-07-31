@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>/img/icons/favicon-16x16" type="x/icon">
+    <link rel="stylesheet" href="<%= BASE_URL %>all.css"  type="text/css">
+    <link rel="stylesheet" href="<%= BASE_URL %>animate.css" type="text/css">
+    <link rel="stylesheet" href="<%= BASE_URL %>bootstrap-grid.min.css" type="text/css">
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script>
+      // this variable is used by the router.
+      var userInit = true;
+      var userIsAuthenticated = false;
+    </script>
+
+    <script>
+      var googleUser = {};
+      let startApp = function (){
+        gapi.load('auth2', function(){
+           auth2 = gapi.auth2.init({
+            client_id : '394842070729-vn3d91hqf6r8vm40485fpu1lnbarfvam.apps.googleusercontent.com',
+            cookiepolicy: 'single_host_origin'
+          })
+        });
+      };  
+      startApp();
+      function attachGoogleSignin( element ){
+      console.log(element, "sign in attached to the element");
+        auth2.attachClickHandler(element, {}, function (result) {
+            googleUser = result;
+            app.__vue__.$store.commit("updategooglelogin");
+        },function (error){
+            console.log(JSON.stringify(error,undefined,2));
+        })
+      }
+    </script>
+    <title>Mixam Business | Entrepreneurs Interaction and Learning Community.</title>
+  </head>
+  <body class="body-style bodystyle">
+    <noscript>
+      <strong>We're sorry but doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <main id="app"></main>
+    <!-- built files will be auto injected -->
+    <script src="<%= BASE_URL %>axios.js"></script>
+    <script type="text/javascript" src="<%= BASE_URL %>uikit.js"></script>
+    <!--import facebook js login sdk
+    <script>
+      window.fbAsyncInit = function (){
+        FB.init({
+          appId: "305632694743961",
+          autoLogAppEvents : true,
+          xfbml: true,
+          version : "v12.0"
+        })
+      };
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>-->
+ </body>
+</html>

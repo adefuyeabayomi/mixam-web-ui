@@ -1,0 +1,52 @@
+{
+  "name": "Mixam-Business",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --fix",
+    "build": "vue-cli-service build --fix",
+    "lint": "vue-cli-service lint --fix"
+  },
+  "dependencies": {
+    "@innologica/vue-dropdown-menu": "^0.1.4",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "cloudinary-vue": "^1.2.4",
+    "core-js": "^3.8.3",
+    "crypto-browserify": "^3.12.0",
+    "dtoaster": "^0.1.4",
+    "node-polyfill-webpack-plugin": "^1.1.4",
+    "register-service-worker": "^1.7.2",
+    "stream-browserify": "^3.0.0",
+    "string-replace-webpack-plugin": "^0.1.3",
+    "vue": "^2.6.14",
+    "vue-check-view": "^0.3.0",
+    "vue-js-modal": "^2.0.1",
+    "vue-router": "^3.5.1",
+    "vue-scrollto": "^2.20.0",
+    "vue-slick-carousel": "^1.0.6",
+    "vue-tasty-burgers": "^1.2.3",
+    "vue2-scrollspy": "^2.3.1",
+    "vue2-touch-events": "^3.2.2",
+    "vuesax": "^3.12.2",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-pwa": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "nodesass": "^0.0.2-security",
+    "prettier": "^2.4.1",
+    "sass": "^1.50.1",
+    "sass-loader": "^12.0.0",
+    "vue-template-compiler": "^2.6.14"
+  }
+}
