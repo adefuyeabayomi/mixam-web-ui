@@ -5,8 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    apiServer : "http://localhost:3000",
-    websocketServer: "ws://localhost:3000",
+    apiServer : "https://mixam-business.onrender.com",
+    websocketServer: "ws://mixam-business.onrender.com",
     loginOpen: false,
     signupOpen: false,
     forgotpasswordOpen: false,
