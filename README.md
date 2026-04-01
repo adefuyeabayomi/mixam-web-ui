@@ -24,10 +24,10 @@ This frontend is built with **Vue.js**, providing a responsive, interactive, and
 - Responsive design for desktop and mobile
 
 ## Tech Stack
-- **Frontend Framework:** Vue.js 3
-- **Styling:** Tailwind CSS / SCSS (if used)
+- **Frontend Framework:** Vue.js
+- **Styling:** CSS / SCSS
 - **Routing:** Vue Router
-- **State Management:** Pinia / Vuex (if used)
+- **State Management:** Vuex
 - **API Calls:** Axios / Fetch API
 
 ## Installation
